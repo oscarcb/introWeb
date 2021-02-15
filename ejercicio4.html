@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* 
+    Como no acomodar un div en el bottom
+    TODO: Acomodar el div en el bottom sin utilizar flex, ni js, solo css con 
+    height de 2000px; del body
+
+*/ 
+body {
+    height: 2000px;   
+}
+div.ex1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #9900ffff;
+}
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #9900ffff;
+}
+div.fixed { 
+    position: fixed;
+    top: 0px;
+    width: 300px;
+    height: 100px;
+    background-color: red;
+}
+div.absolute { 
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 500px;
+    height: 200px;
+    background-color: #9900ffff;
+}
+div.absoluteBottom { 
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    width: 500px;
+    height: 200px;
+    background-color: #9900ffff;
+}
+
+.footer {
+    position: absolute;
+    margin-top: -100px;
+    width: 500px;
+    height: 200px;
+    background-color: #9900ffff;
+
+}
+
+.width-max {
+    max-width: 100px;
+    min-width: 200px;
+}
+</style>
+</head>
+<body>
+<h2>CSS Max-width</h2>
+<div class="fixed">Fixed Fixed Fixed</div>
+<div class="ex1">This div element has width: 500px;</div>
+<br>
+<div class="ex2">This div element has max-width: 500px;</div>
+<div class="absolute">testing absolute div </div>
+<div class="absoluteBottom">bottom absolute</div>
+<div class="width-max">Doggo ipsum he made many woofs shibe you are doin me a concern heckin good boys and girls, h*ck yapper. very taste wow pats. thicc long doggo puggorino. Very taste wow waggy wags very hand that feed shibe corgo, waggy wags boofers smol borking doggo with a long snoot for pats long woofer, adorable doggo you are doin me a concern. Boofers clouds much ruin diet bork very good spot pupper, boofers doge doggo. Thicc very hand that feed shibe borkdrive long woofer doing me a frighten you are doing me the shock, blep many pats smol borking doggo with a long snoot for pats long doggo. Maximum borkdrive boof clouds you are doing me the shock shooberino you are doing me a frighten thicc, doing me a frighten adorable doggo you are doin me a concern corgo heckin good boys and girls. Floofs wow very biscit heckin woofer, length boy.
+</div>
+<footer class="footer">nuestro footer</footer>
+</body>
+</html>
