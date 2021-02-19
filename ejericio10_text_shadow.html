@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+h1 {
+  text-shadow: 2px 2px #FF0000;
+}
+
+#example1 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+}
+#example2 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+#example3 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+}
+
+img:hover {
+    filter: drop-shadow(8px 8px 10px green);
+    cursor: pointer;
+}
+.blur {filter: blur(4px);}
+.brightness {filter: brightness(0.30);}
+.contrast {filter: contrast(180%);}
+.grayscale {filter: grayscale(100%);}
+.huerotate {filter: hue-rotate(180deg);}
+.invert {filter: invert(100%);}
+.opacity {filter: opacity(50%);}
+.saturate {filter: saturate(7);}
+.sepia {filter: sepia(100%);}
+.shadow {filter: drop-shadow(8px 8px 10px green);}
+
+
+</style>
+</head>
+<body>
+<h1>The box-shadow Property</h1>
+<p>The box-shadow property defines the shadow of an element:</p>
+<h2>box-shadow: 5px 10px:</h2>
+<div id="example1">
+  <p>A div element with a shadow. The first value is the horizontal offset and the second value is the vertical offset. The shadow color will be inherited from the text color.</p>
+</div>
+<h2>box-shadow: 5px 10px #888888:</h2>
+<div id="example2">
+  <p>You can also define the color of the shadow. Here the shadow color is grey.</p>
+</div>
+<h2>box-shadow: 5px 10px red:</h2>
+<div id="example3">
+  <p>A red shadow.</p>
+</div>
+
+<div id="example4">
+<img src="https://www.surfcanarias.com/wp-content/uploads/2020/11/saludo-surf-shaka-2-1.jpg" id="imagenFiltrada"/>
+</div>
+
+</body>
+</html>
