@@ -7,8 +7,6 @@
 	text-align: right;
 }
 
-/* Grid system */
-
 .container {
 	width: 960px;
 	margin: 0px auto;
@@ -24,12 +22,6 @@
   clear: both;
 }
 
-[class*="col-"] {
-	min-height: 7px;
-	padding: 0 14px;
-	float: left;
-}
-
 .izquierda, .gato {
 	/* (3 / 12) x 100 */
 	width: 25%;
@@ -42,41 +34,11 @@
     float: left; 
 }
 
-.col-5 {
-	/* (5 / 12) x 100 */
-	width: 41.666667%;
-}
-
-.col-6 {
-	/* (6 / 12) x 100 */
-	width: 50%;
-} 
-
-.col-7 {
-	/* (7 / 12) x 100 */
-	width: 58.333333%;
-}
-
-.col-8 {
-	/* (8 / 12) x 100 */
-	width: 66.666667%;
-}
-
 .derecha {
 	/* (9 / 12) x 100 */
 	width: 75%;
     float: left;
 
-}
-
-.col-10 {
-	/* (10 / 12) x 100 */
-	width: 83.333333%;
-}
-
-.col-11 {
-	/* (11 / 12) x 100 */
-	width: 91.666667%;
 }
 
 .full-width {
