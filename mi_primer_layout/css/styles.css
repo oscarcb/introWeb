@@ -1,0 +1,167 @@
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+/* Grid system */
+
+.container {
+	width: 960px;
+	margin: 0px auto;
+	position: relative;
+}
+
+.row:before, .row:after{
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+[class*="col-"] {
+	min-height: 7px;
+	padding: 0 14px;
+	float: left;
+}
+
+.izquierda, .gato {
+	/* (3 / 12) x 100 */
+	width: 25%;
+    float: left;
+} 
+
+.redes {
+	/* (4 / 12) x 100 */
+	width: 33.333333%;
+    float: left; 
+}
+
+.col-5 {
+	/* (5 / 12) x 100 */
+	width: 41.666667%;
+}
+
+.col-6 {
+	/* (6 / 12) x 100 */
+	width: 50%;
+} 
+
+.col-7 {
+	/* (7 / 12) x 100 */
+	width: 58.333333%;
+}
+
+.col-8 {
+	/* (8 / 12) x 100 */
+	width: 66.666667%;
+}
+
+.derecha {
+	/* (9 / 12) x 100 */
+	width: 75%;
+    float: left;
+
+}
+
+.col-10 {
+	/* (10 / 12) x 100 */
+	width: 83.333333%;
+}
+
+.col-11 {
+	/* (11 / 12) x 100 */
+	width: 91.666667%;
+}
+
+.full-width {
+	/* (12 / 12) x 100 */
+	width: 100%;
+}
+
+.min-height {
+    min-height: 400px;
+}
+
+.marcotitles {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.menucontainer {
+    width: 334px;
+    margin: 0 auto;
+}
+.titles {
+	text-decoration: none;
+	color: #707070;
+	padding-right: 30px;
+	font-size: 20px;
+	padding-top: 20px;
+	font-family: Tahoma;
+}
+.last-title {
+    padding-right:0px;
+}
+header {
+	background-image:url(../images/background.jpg);
+	height: 480px;
+	background-size: cover;
+}
+#logo {
+	margin-top: 70px;
+}
+#textlogo1 {
+	font-family: Arial;
+	font-size: 40px;
+	color: #F0F0F0;
+	font-weight: bold;
+}
+#textlogo2{
+	font-family: Arial;
+	font-size: 20px;
+	color: #F0F0F0;
+	font-weight: bold;
+}
+h2 {
+	font-family: Oswald;
+	font-size: 30px;
+	color: #5BF3D8;
+	margin-bottom: 30px;
+	margin-top: 60px;
+}
+.imgprofile{
+	border:1px solid black;
+	width: 200px;
+	height: 200px;
+}
+.textoprofile {
+	display: inline-block;
+	font-family: Arial;
+	font-size: 15px;
+}
+h3 {
+	font-family: Oswald;
+	font-size: 15px;
+	color: #5BF3D8;
+	margin-bottom: 30px;
+}
+.imgkitten {
+	border: 3px solid purple;
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	padding: 5px;
+	margin-bottom: 50px;
+}
+footer {
+	background-image:url(../images/tile2.png);
+	height: 300px;
+}
+.imgtwitter {
+	margin-left: 190px;
+}
