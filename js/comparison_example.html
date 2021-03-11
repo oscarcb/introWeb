@@ -1,0 +1,16 @@
+<html>
+<body>
+<p>Remove the comment (at the beginning of each line) to test each case:</p>
+<p id="demo"></p>
+<script>
+var x;
+//x = (0 == "");   // true
+//x = (1 == "1");  // true
+x = (1 == true);   // true
+//x = (0 === "");  // false
+//x = (1 === "1");   // false
+//x = (1 === true);  // false
+document.getElementById("demo").innerHTML = x;
+</script>
+</body>
+</html>

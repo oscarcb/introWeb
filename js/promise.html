@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Promise</h2>
+<p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+<h1 id="demo"></h1>
+<script>
+let myPromise = new Promise(function(myResolve, myReject) {
+  setTimeout(function(){ myResolve("MeowMeowBeenz!!"); }, 1000);
+});
+myPromise.then(function(value) {
+    alert('Hello');
+  document.getElementById("demo").innerHTML = value;
+}).then(function(value) { 
+    alert('second then');
+});
+</script>
+</body>
+</html>
+

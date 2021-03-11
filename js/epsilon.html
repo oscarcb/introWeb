@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Number Object Properties</h2>
+<p>EPSILON</p>
+<p id="demo"></p>
+<p id="demoMinSafe"></p>
+<p id="demoMaxSafe"></p>
+<p id="demoIsInteger"></p>
+<p id="demoIsSafeInteger"></p>
+
+
+<script>
+var  x = Number.EPSILON;
+document.getElementById("demo").innerHTML = x;
+
+let y = Number.MIN_SAFE_INTEGER;
+document.getElementById("demoMinSafe").innerHTML = y;
+
+
+let z = Number.MAX_SAFE_INTEGER;
+document.getElementById("demoMaxSafe").innerHTML = z;
+
+
+document.getElementById("demoIsInteger").innerHTML =
+"El 10 es int: " + 
+Number.isInteger(10) + "<br>" + 
+"El 10.5 es int: " + 
+Number.isInteger(10.5);
+
+
+document.getElementById("demoIsSafeInteger").innerHTML =
+ Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(12345678901234567890);
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+html {
+    font-family: 'Roboto', 'Open Sans',Arial, Sans-serif; }
+body {
+    width: 100%;
+    margin: 0;
+}
+    
+#header { 
+    background-color: #27AD60;
+    height: 100px;
+    width: 100%;
+}
+#nav { 
+    float: right;
+    margin-right: 30px;
+}
+#nav li {
+    float:left; 
+    list-style-type: none;
+    margin-right: 15px;
+}
+#nav li a {
+    
+    text-decoration: none;
+    color: white;
+}
+/*  Solucion Isaac */ 
+#carousel {
+    background-image: url('carousel-bg.jpg');
+    width: 100%;
+    height: 310px;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    padding-top: 150px;
+    background-position-y: center;
+    background-size: cover;
+    text-align: center;
+}
+
+
+/* Termina Solución Isaac */
+/* Propiedades Generales */ 
+h1 {
+    text-transform: uppercase;
+}
+hr { 
+    width: 20%;
+}
+
+/* Termina Propiedades Generales */ 
+
+
+#colorpalette { 
+    text-align: center;
+}
+
+/* Solucion de Marcela */ 
+.wrapper {
+    padding-inline-start: 20%;
+    padding-inline-end: 20%;
+    display: inline-block;
+    justify-content: center;
+}
+
+#rectangle {
+    width:200px;
+    height:140px;
+    float: left;
+    margin-bottom: 10px;
+    margin: center;
+}
+
+.textboxblack {
+    text-align: center;
+    color: black;
+}
+
+.textboxwhite {
+    text-align: center;
+    color: white;
+}
+/* Termina Solucion de Marcela */ 
+
+/* Solucion de Victor */ 
+div.paleta .paleta_contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+p.colors1{
+    width: 120px;
+    height: 100px;
+    background-color: #69D2E7;
+}
+p.colors2{
+    width: 120px;
+    height: 100px;
+    background-color: #A7DBDB;
+}
+p.colors3{
+    width: 120px;
+    height: 100px;
+    background-color: #E0E4CC;
+}
+p.colors4{
+    width: 120px;
+    height: 100px;
+    background-color: #F38630;
+}
+p.colors5{
+    width: 120px;
+    height: 100px;
+    background-color: #FA6900;
+}
+/* Termina la solución de Victor */
+
+
+
+
+#aboutUs {
+  background-color: #334556;
+  color: #FFFFFF;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+#aboutUs hr {
+    color: #C3C3C3; 
+}
+
+.izquierdo, .derecho { 
+    float:left;
+    width: 50%;
+    height: 450px;
+}
+
+/*Solución Daniel */
+
+.div3Graphs{
+    background-color: #cccccc;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    padding: 1px 1px;
+}
+
+#div3Orange{
+    background-color: #DF514C;
+    height: 10px;
+    margin-left: 0px;
+}
+/*Termina solución Daniel*/
+
+
+#footer { 
+    clear: both;
+    margin-top: 500px;
+    background-image: url('img-divider-img.jpg');
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-attachment: static;
+    background-position: 0px -75px;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Using JavaScript Symbol()</h2>
+<p id="demo"></p>
+<script>
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+let id = Symbol('id');
+person.id = 140353;
+document.getElementById("demo").innerHTML = person.id;
+</script>
+</body>

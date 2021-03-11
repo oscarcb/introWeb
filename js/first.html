@@ -1,0 +1,60 @@
+<head>
+    <style>
+        img {
+            cursor: pointer;
+        } 
+    </style>
+</head>
+
+<body>
+    <h1>
+        Horrible Horrible Horrible Horrible Horrible Horrible Horrible Horrible  
+    </h1>
+
+
+
+    <h3 >Con un Evento de Click </h3>
+
+
+    <img src="https://placeimg.com/640/480/any" onclick="" class="miFoto" />
+
+
+
+    <script>
+    
+    
+        let helado = 'vainilla';
+        
+        
+        if (helado === 'chocolate') {
+         // alert('¡Sí, amo el helado de chocolate!');
+        } else {
+// alert('Awwww, pero mi favorito es el de chocolate...');
+        }
+        
+        
+        document.querySelector('h1').onclick = function() {
+            alert('¡Ouch! ¡Deja de pincharme!');
+        }
+        
+        
+        function multiplica(num1,num2) {
+            let resultado = num1 * num2;
+            alert(resultado);
+        } 
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            let miHTML = document.querySelector('.miFoto');
+            miHTML.onclick = multiplica(4,2);
+        });
+
+        // 
+
+
+        </script>
+
+    
+
+</body>
+

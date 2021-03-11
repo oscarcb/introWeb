@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            em {
+                display: block;
+                width: 400px;
+            }
+        </style>
+    </head>
+<body>
+<p>Si comparo un string con un objeto
+    <em>
+        let x = "Cabañas";        // x is a string
+        let y = new String("Cabañas");  // y is an object
+        document.getElementById("demo").innerHTML = x===y;
+    </em>: 
+</p>
+
+<p id="demo"></p>
+
+<p>Si comparo un objeto con un objeto :
+    <em>
+        let objeto1 = new String("Cabañas");        // objeto1 is a object
+        let objeto2 = new String("Cabañas");  // objeto2 is an object
+        document.getElementById("demo2").innerHTML = objeto1===objeto2;
+    </em>
+</p>
+
+<p id="demo2"></p>
+<p>Si comparo un string con un string:
+    <em>
+        let string1 = "Cabañas";
+        let string2 = "Cabañas";
+        document.getElementById("demo3").innerHTML = string1===string2;
+    </em>
+</p>
+
+<p id="demo3"></p>
+
+    <script>
+        let x = "Cabañas";        // x is a string
+        let y = new String("Cabañas");  // y is an object
+        document.getElementById("demo").innerHTML = x===y;
+
+        let objeto1 = new String("Cabañas");        // objeto1 is a object
+        let objeto2 = new String("Cabañas");  // objeto2 is an object
+        document.getElementById("demo2").innerHTML = objeto1===objeto2;
+
+        let string1 = "Cabañas";
+        let string2 = "Cabañas";
+        document.getElementById("demo3").innerHTML = string1===string2;
+
+    </script>
+</body>
+</html>

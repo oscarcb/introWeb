@@ -1,0 +1,36 @@
+<html>
+<head>
+<script language="JavaScript">
+function temp(form)
+{
+    console.log(form)
+    console.log("**********")
+    console.log(form.DegF)
+  var f = parseFloat(form.DegF.value, 10);
+  var c = 0;
+  c = (f - 32.0) * 5.0 / 9.0;
+  form.DegC.value = c;
+  document.getElementById("resultado").innerHTML = c;
+
+}
+</script>
+</head>
+
+<body>
+<form>
+<h2>Fahrenheit to Celsius Converter</h2>
+Enter a temperature in degrees F: 
+<input NAME="DegF" VALUE="0" MAXLENGTH="15" SIZE=15 type="text"> 
+<p>
+Click this button to calculate the temperature 
+in degrees C:
+<input NAME="calc" VALUE="Calculate" TYPE=BUTTON 
+onClick=temp(this.form)>
+<p>
+Temperature in degrees C is: 
+<input NAME="DegC" READONLY SIZE=15>
+
+<p id="resultado"></p>
+</form>
+</body>
+</html>

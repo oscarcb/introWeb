@@ -1,0 +1,57 @@
+<html>
+    <style>
+        .unContenedor  ul li a  {
+            display: block;
+            border: 1px solid green;
+        }
+    </style>
+<body>
+<p id="demo"></p>
+
+<div class="unContenedor">
+        alo
+        <ul>
+            <li>
+                <a href="#">
+                    <img class="unaImagen" src="https://via.placeholder.com/150">
+                </a>
+            </li>
+        </ul>
+</div>
+<script>
+var day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+    break;
+  default:
+     day = "unknown";
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+console.log(document.getElementById("demo"))
+</script>
+
+
+<!-- //*[@id="demo"]
+/html/body/div/ul/li/a/img
+-->
+</body>
+</html>

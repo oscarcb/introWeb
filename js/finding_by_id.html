@@ -1,0 +1,27 @@
+<html>
+<body>
+
+<h2>Finding HTML Elements by Id</h2>
+
+<p id="intro"> “Cien años de grandeza” breves episodios contando la historia del Club América, en base a grandes anécdotas de la historia Águila en orden cronológico, contado de una manera agradable y dinámica. Viajaremos a través del tiempo para rememorar los puntos claves de la gloriosa historia azulcrema.</p>
+<p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+<p id="demo"></p>
+
+
+<p id="modifiedDemoText"></p>
+
+<script>
+var myElement = document.getElementById("intro");
+document.getElementById("demo").innerHTML = 
+"The text from the intro paragraph is " + myElement.innerHTML;
+
+var myElement = document.getElementById("modifiedDemoText");
+document.getElementById("modifiedDemoText").innerHTML = "textponuevo"
+
+
+
+</script>
+
+</body>
+</html>
