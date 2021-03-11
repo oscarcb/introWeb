@@ -1,0 +1,120 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: 'Roboto';font-size: 22px;
+        }
+
+
+        .elementoForma label {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1>
+    Prueba de Forma Completa
+</h1>
+
+<form action="#" onsubmit="submitHandle(this)">
+
+    <div class="elementoForma">
+        <label for="Nombre">Nombre: </label>
+        <input type="text" name="Nombre" onblur="validarNombre(this)" placeholder="Escribe tu Nombre"/>
+    </div>
+
+    <div class="elementoForma">
+        <label for="PrimerApellido">Primer Apellido:</label>
+        <input type="text" name="PrimerApellido" onblur="validarNombre(this)" placeholder="Escribe tu Apellido"/>
+    </div>
+
+    <div class="elementoForma">
+        <label for="SegundoApellido">Segundo Apellido:</label>
+        <input type="text" name="SegundoApellido" onblur="validarNombre(this)" placeholder="Escribe tu Apellido"/>
+    </div>
+        
+    <div class="elementoForma">
+        <label for="CodigoPostal">Código Postal</label>
+        <input type="text" name="CodigoPostal" onblur="prellenaDireccion(this)" id="CodigoPostal"/>
+    </div>
+
+    <div class="elementoForma">
+        <label for="CalleYNumero">Calle y Número</label>
+        <input type="text" name="CalleYNumero" id="CalleYNumero" />
+    </div>
+
+    <div class="elementoForma">
+        <label for="Colonia">Colonia</label>
+        <input type="text" name="Colonia" id="Colonia" />
+    </div>
+
+    <div class="elementoForma">
+        <label for="Municipio">Municipio</label>
+        <input type="text" name="Municipio" id="Municipio" />
+    </div>
+
+    <div class="elementoForma">
+        <label for="Estado">Estado</label>
+        <input type="text" name="Estado" id="Estado"/>
+    </div>
+
+    <div class="elementoForma">
+        <label for="Pais">País</label>
+        <input type="text" name="Pais" id="Pais"/>
+    </div>
+
+
+
+    <input type="submit" value="Enviar"/>
+
+</form>
+
+<script>
+    function validarNombre(field) {
+        // TODO: Check names with acentos
+
+        const regex=/^[a-zA-Z]+$/; 
+
+        let nombre = field.value;
+        if (!nombre.match(regex))
+        {
+            field.style.background = "red";
+
+        }
+    }
+
+    async function prellenaDireccion(field) {
+        let cp = field.value
+        let token = '' // get token from website
+        try {
+        const res = await fetch(
+          `https://api-sepomex.hckdrk.mx/query/info_cp/${cp}?=simplified&token=${token}`
+        )
+        const data = await res.json()
+        if (data.error !== false) {
+          const { response } = data[0]
+          console.log(response)
+          document.getElementById("Colonia").value =response.asentamiento;
+          document.getElementById("Municipio").value =response.municipio;
+          document.getElementById("Estado").value =response.estado;
+          document.getElementById("Pais").value = 'México';
+
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    function submitHandle(form) { 
+        console.log(form)
+    }
+
+</script>
+
+</body>

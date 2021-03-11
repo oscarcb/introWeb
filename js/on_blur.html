@@ -1,0 +1,116 @@
+<html>
+    <body onLoad="myOnLoadEvent()" onunload="onUnLoad()">
+
+<!-- OnLoad Event -->
+<h1>Viva Cuauhtemoc Blanco!</h1>
+
+<form action="#" onsubmit="submitEvent(this)">
+
+        <!-- Blur Event -->
+    Enter your name: 
+    <input type="text" id="fname" onBlur="myFunction()">
+    <p>When you leave the input field, a function is 
+        triggered which transforms the input text to upper case.</p>
+
+    <button onclick="document.getElementById('demo').innerHTML=Date()">
+        The time is?
+    </button>
+
+
+    <p id="demo"></p>
+
+<!-- OnChange Event-->
+
+    <p>Select a new car from the list.</p>
+
+    <select id="mySelect" onChange="myAutoFunction()">
+    <option value="Audi">Audi</option>
+    <option value="BMW">BMW</option>
+    <option value="Mercedes">Mercedes</option>
+    <option value="Volvo">Volvo</option>
+    </select>
+    <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+    <p id="demoAuto"></p>
+
+
+
+    <!-- OnFocus Event-->
+    Enter your name: <input type="text" onFocus="onFocusEvent(this)" onBlur="onBlurEvent(this)">
+    <p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+    
+    <!-- MouseOver Event-->
+
+    <h1 id="mouseOverDemo">Mouse over me</h1>
+
+    <!-- OnSelect Event-->
+    
+    
+    Select some of the text: <input type="text" value="Hello world!" onselect="myOnSelectEvent()">
+
+    <br/>
+    <input type="submit" value="Submit">
+
+
+
+</form>
+
+
+    <script>
+        function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+        }
+
+        function myAutoFunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+
+
+        function onFocusEvent(x) {
+            x.style.background = "yellow";
+        }
+
+        function onBlurEvent(x) {
+            console.log(x)
+            x.style.background = "white";
+        }
+
+        function myOnLoadEvent(){
+            console.log("¡Viva!")
+        }
+
+
+        function mouseOver() {
+            document.getElementById("mouseOverDemo").style.color = "red";
+        }
+
+        function mouseOut() {
+            document.getElementById("mouseOverDemo").style.color = "black";
+        }
+
+        document.getElementById("mouseOverDemo").addEventListener("mouseover",mouseOver);
+        document.getElementById("mouseOverDemo").addEventListener("mouseout",mouseOut);
+
+        function myOnSelectEvent() {
+            console.log('Selected Text');
+        }
+
+        function submitEvent(x){
+            console.log(x)
+        }
+
+        
+    //  OnLoad Event
+
+        function onUnLoad(){
+            alert("bye")
+        }
+
+    
+
+
+
+    </script>
+</body>
+</html>
