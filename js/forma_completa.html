@@ -34,7 +34,7 @@
 
     <div class="elementoForma">
         <label for="PrimerApellido">Primer Apellido:</label>
-        <input type="text" name="PrimerApellido" onblur="validarNombre(this)" placeholder="Escribe tu Apellido"/>
+        <input type="text" name="PrimerApellido" onblur="validarContenido(this)" placeholder="Escribe tu Apellido"/>
     </div>
 
     <div class="elementoForma">
@@ -49,42 +49,49 @@
 
     <div class="elementoForma">
         <label for="CalleYNumero">Calle y Número</label>
-        <input type="text" name="CalleYNumero" id="CalleYNumero"  placeholder="Ingresa tu Calle y Número"/>
+        <input type="text" name="CalleYNumero" id="CalleYNumero"   onblur="validarContenido(this)" placeholder="Ingresa tu Calle y Número"/>
+
     </div>
 
     <div class="elementoForma">
         <label for="Colonia">Colonia</label>
-        <input type="text" name="Colonia" id="Colonia" />
+        <input type="text" name="Colonia"  onblur="validarContenido(this)" id="Colonia" />
     </div>
 
     <div class="elementoForma">
         <label for="Municipio">Municipio</label>
-        <input type="text" name="Municipio" id="Municipio" />
+        <input type="text" name="Municipio"  onblur="validarContenido(this)"  id="Municipio" />
     </div>
 
     <div class="elementoForma">
         <label for="Estado">Estado</label>
-        <input type="text" name="Estado" id="Estado"/>
+        <input type="text" name="Estado"  onblur="validarContenido(this)"  id="Estado"/>
     </div>
 
     <div class="elementoForma">
         <label for="Pais">País</label>
-        <input type="text" name="Pais" id="Pais"/>
+        <input type="text" name="Pais"  onblur="validarContenido(this)" id="Pais"/>
     </div>
 
+        <input id="submit" type="submit" value="Enviar" disabled = true/>
 
-
-    <input type="submit" value="Enviar" disabled="disabled"/>
 
 </form>
 
 <script>
-
-    var nombreValido = false , PrimerApellidoValido = false , SegundoApellidoValido = false ,
-     CodigoPostalValido = false , CalleYNumeroValido = false ;
     
     let arregloDeForma = [];
+    arregloDeForma['NombreValido'] = false ;
     arregloDeForma['SegundoApellidoValido'] = false ;
+    arregloDeForma['PrimerApellidoValido'] = false;
+    arregloDeForma['CalleYNumeroValido'] = false;
+    arregloDeForma['CodigoPostalValido'] = false;
+    arregloDeForma['ColoniaValido'] = false;
+    arregloDeForma['MunicipioValido'] = false;
+    arregloDeForma['EstadoValido'] = false;
+    arregloDeForma['PaisValido'] = false;
+
+
 
     function validarNombre(field) {
         // TODO: Check names with acentos
@@ -96,27 +103,35 @@
         {
             field.style.background = "red";
 
-        } else if( field.value.length > 0 ) { 
-            nombreValido = true
+        } else if( field.value.length > 0 ) {
+            arregloDeForma['NombreValido'] = true        
         } 
 
     }
 
     function validarContenido(field) {
-        console.log(SegundoApellidoValido)
         
         if( field.value.length > 0 ) { 
          let nuestroField = field.name+"Valido"
-         console.log(arregloDeForma['SegundoApellidoValido'])
-         arregloDeForma['SegundoApellidoValido'] = true
-         console.log(arregloDeForma['SegundoApellidoValido'])
-
+         arregloDeForma[nuestroField] = true
         } 
 
     }
-
+    window.addEventListener("keydown", () => {
+                for (var key in arregloDeForma) {
+                        if (!arregloDeForma[key]) {
+                            console.log("falta "+key)
+                            document.getElementById("submit").disabled = true;
+                            break;
+                        } else {
+                            document.getElementById("submit").disabled = false;
+                        }
+                    }
+            });
+        
     async function prellenaDireccion(field) {
         let cp = field.value
+        validarContenido(field)
         let token = 'cf67db0d-be5d-4523-9c29-81756cc5c5aa' // get token from website
         try {
         const res = await fetch(
