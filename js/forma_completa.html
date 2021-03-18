@@ -26,7 +26,10 @@
 
     <div class="elementoForma">
         <label for="Nombre">Nombre: </label>
-        <input type="text" name="Nombre" onblur="validarNombre(this)" placeholder="Escribe tu Nombre"/>
+        <input type="text" name="Nombre" 
+            onblur="validarNombre(this)" 
+            placeholder="Escribe tu Nombre"
+            />
     </div>
 
     <div class="elementoForma">
@@ -36,17 +39,17 @@
 
     <div class="elementoForma">
         <label for="SegundoApellido">Segundo Apellido:</label>
-        <input type="text" name="SegundoApellido" onblur="validarNombre(this)" placeholder="Escribe tu Apellido"/>
+        <input type="text" name="SegundoApellido" onblur="validarContenido(this)" placeholder="Escribe tu Apellido"/>
     </div>
         
     <div class="elementoForma">
         <label for="CodigoPostal">Código Postal</label>
-        <input type="text" name="CodigoPostal" onblur="prellenaDireccion(this)" id="CodigoPostal"/>
+        <input type="text" name="CodigoPostal" placeholder="Ingresa tu Código Postal" onblur="prellenaDireccion(this)" id="CodigoPostal"/>
     </div>
 
     <div class="elementoForma">
         <label for="CalleYNumero">Calle y Número</label>
-        <input type="text" name="CalleYNumero" id="CalleYNumero" />
+        <input type="text" name="CalleYNumero" id="CalleYNumero"  placeholder="Ingresa tu Calle y Número"/>
     </div>
 
     <div class="elementoForma">
@@ -71,11 +74,18 @@
 
 
 
-    <input type="submit" value="Enviar"/>
+    <input type="submit" value="Enviar" disabled="disabled"/>
 
 </form>
 
 <script>
+
+    var nombreValido = false , PrimerApellidoValido = false , SegundoApellidoValido = false ,
+     CodigoPostalValido = false , CalleYNumeroValido = false ;
+    
+    let arregloDeForma = [];
+    arregloDeForma['SegundoApellidoValido'] = false ;
+
     function validarNombre(field) {
         // TODO: Check names with acentos
 
@@ -86,12 +96,28 @@
         {
             field.style.background = "red";
 
-        }
+        } else if( field.value.length > 0 ) { 
+            nombreValido = true
+        } 
+
+    }
+
+    function validarContenido(field) {
+        console.log(SegundoApellidoValido)
+        
+        if( field.value.length > 0 ) { 
+         let nuestroField = field.name+"Valido"
+         console.log(arregloDeForma['SegundoApellidoValido'])
+         arregloDeForma['SegundoApellidoValido'] = true
+         console.log(arregloDeForma['SegundoApellidoValido'])
+
+        } 
+
     }
 
     async function prellenaDireccion(field) {
         let cp = field.value
-        let token = '' // get token from website
+        let token = 'cf67db0d-be5d-4523-9c29-81756cc5c5aa' // get token from website
         try {
         const res = await fetch(
           `https://api-sepomex.hckdrk.mx/query/info_cp/${cp}?=simplified&token=${token}`
