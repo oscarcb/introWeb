@@ -1,0 +1,26 @@
+
+<script>
+
+console.log(one) // undefined
+console.log(two)  // ReferenceError: two is not defined
+console.log(three) // ReferenceError: three is not defined
+var one = 1
+function myFunc () {
+ console.log(one) // 1
+ var two = 2
+
+ console.log(two) // undefined
+ console.log(three) // ReferenceError: three is not defined
+ console.log(two) // 2
+}
+function myOtherFunc () {
+ console.log(one) // 1
+ console.log(two) // ReferenceError: two is not defined
+ console.log(three) // undefined
+ var three = 3
+ console.log(three) // 3
+}
+myFunc()
+//myOtherFunc()
+
+</script>

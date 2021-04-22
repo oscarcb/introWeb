@@ -1,0 +1,22 @@
+<script>
+var globalThis = this
+console.log(this)
+console.log(document)
+var myObj = {
+ myMethod: function () {   
+   console.log('globalThis: ', globalThis)
+   console.log('this inside: ', this)
+   console.log(globalThis === this)
+   console.log(myObj === this)
+   var w = window
+   console.log(w)
+   console.log(globalThis === w)
+
+ }
+}
+myObj.myMethod()
+// globalThis: Window { ... }
+// this inside: { myMethod: f }
+// false
+// true
+</script>
