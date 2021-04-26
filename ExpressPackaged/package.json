@@ -1,0 +1,21 @@
+{
+  "name": "express-packaged",
+  "version": "1.0.0",
+  "description": "Aqui generamos un express con su package.json para explicar el proceso",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "express",
+    "test",
+    "teach",
+    "classes"
+  ],
+  "author": "",
+  "license": "ISC"
+}
