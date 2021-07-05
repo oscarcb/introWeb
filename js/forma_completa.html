@@ -79,12 +79,17 @@
 </form>
 
 <script>
-
-    var nombreValido = false , PrimerApellidoValido = false , SegundoApellidoValido = false ,
-     CodigoPostalValido = false , CalleYNumeroValido = false ;
+    const form = document.getElementsByTagName('form')[0];
+    const fieldsList = Array.from(form.querySelectorAll('input[type="text"]'));
+    const submitButton = form.querySelector('input[type="submit"]');
     
-    let arregloDeForma = [];
-    arregloDeForma['SegundoApellidoValido'] = false ;
+    fieldsList.forEach((field) => {
+      field.addEventListener('change', () => {
+        submitButton.disabled = fieldsList
+          .map(validarContenido)
+          .some((isValid) => !isValid);
+      });
+    });
 
     function validarNombre(field) {
         // TODO: Check names with acentos
@@ -97,22 +102,15 @@
             field.style.background = "red";
 
         } else if( field.value.length > 0 ) { 
-            nombreValido = true
+            return true;
         } 
-
+        return false;
     }
 
     function validarContenido(field) {
-        console.log(SegundoApellidoValido)
-        
-        if( field.value.length > 0 ) { 
-         let nuestroField = field.name+"Valido"
-         console.log(arregloDeForma['SegundoApellidoValido'])
-         arregloDeForma['SegundoApellidoValido'] = true
-         console.log(arregloDeForma['SegundoApellidoValido'])
-
-        } 
-
+        if (field.name === 'Nombre')
+            return validarNombre(field);
+        return field.value.length > 0;
     }
 
     async function prellenaDireccion(field) {
@@ -131,6 +129,9 @@
           document.getElementById("Estado").value =response.estado;
           document.getElementById("Pais").value = 'México';
 
+          submitButton.disabled = fieldsList
+            .map(validarContenido)
+            .some((isValid) => !isValid);
         }
       } catch (error) {
         console.log(error)
